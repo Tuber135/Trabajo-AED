@@ -1,0 +1,195 @@
+package proyecto;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import javax.swing.JSeparator;
+import javax.swing.ImageIcon;
+import java.awt.Cursor;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+
+public class Menu extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField txtUser;
+	private JTextField textField;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Menu frame = new Menu();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Menu() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 800, 500);
+		contentPane = new JPanel();
+		contentPane.setBackground(new Color(192, 192, 192));
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(244, 164, 96));
+		panel.setBounds(0, 0, 200, 461);
+		contentPane.add(panel);
+		panel.setLayout(null);
+		
+		JSeparator separator = new JSeparator();
+		separator.setBounds(10, 136, 180, 2);
+		separator.setForeground(new Color(255, 255, 255));
+		panel.add(separator);
+		
+		JSeparator separator_1 = new JSeparator();
+		separator_1.setBounds(39, 214, 125, 2);
+		separator_1.setForeground(Color.WHITE);
+		panel.add(separator_1);
+		
+		JSeparator separator_2 = new JSeparator();
+		separator_2.setBounds(39, 283, 125, 2);
+		separator_2.setForeground(Color.WHITE);
+		panel.add(separator_2);
+		
+		JLabel lblTbSystems = new JLabel("TB Systems");
+		lblTbSystems.setBounds(24, 79, 151, 46);
+		lblTbSystems.setForeground(new Color(255, 255, 255));
+		lblTbSystems.setFont(new Font("SansSerif", Font.BOLD, 20));
+		lblTbSystems.setHorizontalAlignment(SwingConstants.CENTER);
+		panel.add(lblTbSystems);
+		
+		JLabel lblSalir = new JLabel("Salir");
+		lblSalir.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		lblSalir.setBounds(63, 303, 49, 30);
+		lblSalir.setHorizontalAlignment(SwingConstants.CENTER);
+		lblSalir.setForeground(Color.WHITE);
+		lblSalir.setFont(new Font("Arial", Font.BOLD, 15));
+		panel.add(lblSalir);
+		
+		JLabel lblAsistencia = new JLabel("Productos");
+		lblAsistencia.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		lblAsistencia.setBounds(63, 164, 86, 30);
+		lblAsistencia.setHorizontalAlignment(SwingConstants.CENTER);
+		lblAsistencia.setForeground(Color.WHITE);
+		lblAsistencia.setFont(new Font("Arial", Font.BOLD, 15));
+		panel.add(lblAsistencia);
+		
+		JLabel lblContacto = new JLabel("Soporte");
+		lblContacto.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		lblContacto.setBounds(63, 236, 71, 30);
+		lblContacto.setHorizontalAlignment(SwingConstants.CENTER);
+		lblContacto.setForeground(Color.WHITE);
+		lblContacto.setFont(new Font("Arial", Font.BOLD, 15));
+		panel.add(lblContacto);
+		
+		JLabel Logo = new JLabel("");
+		Logo.setBounds(71, 35, 55, 46);
+		Logo.setHorizontalAlignment(SwingConstants.CENTER);
+		panel.add(Logo);
+		Logo.setIcon(new ImageIcon(Menu.class.getResource("/proyecto_assets/Vector.png")));
+		
+		JLabel PNGProductos = new JLabel("");
+		PNGProductos.setBounds(20, 161, 43, 36);
+		panel.add(PNGProductos);
+		PNGProductos.setHorizontalAlignment(SwingConstants.CENTER);
+		PNGProductos.setIcon(new ImageIcon(Menu.class.getResource("/proyecto_assets/mdi_face-agent.png")));
+		
+		JLabel PNGSoporte = new JLabel("");
+		PNGSoporte.setHorizontalAlignment(SwingConstants.CENTER);
+		PNGSoporte.setBounds(25, 233, 33, 36);
+		panel.add(PNGSoporte);
+		PNGSoporte.setIcon(new ImageIcon(Menu.class.getResource("/proyecto_assets/bx_support.png")));
+		
+		JLabel PNGSalir = new JLabel("");
+		PNGSalir.setBounds(25, 303, 33, 30);
+		panel.add(PNGSalir);
+		PNGSalir.setIcon(new ImageIcon(Menu.class.getResource("/proyecto_assets/solar_exit-bold.png")));
+		PNGSalir.setHorizontalAlignment(SwingConstants.CENTER);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(200, 0, 584, 138);
+		contentPane.add(panel_1);
+		panel_1.setLayout(null);
+		
+		JLabel lblComprobante = new JLabel("Comprobante:");
+		lblComprobante.setBounds(157, 23, 95, 15);
+		panel_1.add(lblComprobante);
+		lblComprobante.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		lblComprobante.setHorizontalAlignment(SwingConstants.LEFT);
+		
+		JLabel lblFormaDePago = new JLabel("Forma de pago:");
+		lblFormaDePago.setHorizontalAlignment(SwingConstants.LEFT);
+		lblFormaDePago.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		lblFormaDePago.setBounds(179, 49, 112, 20);
+		panel_1.add(lblFormaDePago);
+		
+		JLabel lblUsuario = new JLabel("Usuario:");
+		lblUsuario.setHorizontalAlignment(SwingConstants.LEFT);
+		lblUsuario.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		lblUsuario.setBounds(38, 23, 95, 15);
+		panel_1.add(lblUsuario);
+		
+		JLabel lblDni = new JLabel("DNI:");
+		lblDni.setHorizontalAlignment(SwingConstants.LEFT);
+		lblDni.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		lblDni.setBounds(38, 49, 95, 15);
+		panel_1.add(lblDni);
+		
+		JLabel lblNombre = new JLabel("Nombre:");
+		lblNombre.setHorizontalAlignment(SwingConstants.LEFT);
+		lblNombre.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		lblNombre.setBounds(38, 101, 95, 15);
+		panel_1.add(lblNombre);
+		
+		JLabel lblDireccin = new JLabel("Direcci\u00F3n:");
+		lblDireccin.setHorizontalAlignment(SwingConstants.LEFT);
+		lblDireccin.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		lblDireccin.setBounds(38, 75, 95, 15);
+		panel_1.add(lblDireccin);
+		
+		txtUser = new JTextField();
+		txtUser.setText("User");
+		txtUser.setBounds(96, 20, 37, 20);
+		panel_1.add(txtUser);
+		txtUser.setColumns(10);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Cotizaci\u00F3n", "Boleta", "Factura"}));
+		comboBox.setBounds(262, 22, 102, 20);
+		panel_1.add(comboBox);
+		
+		textField = new JTextField();
+		textField.setBounds(75, 48, 86, 20);
+		panel_1.add(textField);
+		textField.setColumns(10);
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.setBackground(new Color(220, 220, 220));
+		panel_2.setBounds(200, 386, 584, 75);
+		contentPane.add(panel_2);
+		panel_2.setLayout(null);
+	}
+}

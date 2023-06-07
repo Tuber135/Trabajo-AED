@@ -1,0 +1,98 @@
+package proyecto;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.Color;
+import javax.swing.border.LineBorder;
+import javax.swing.JSeparator;
+import javax.swing.JPasswordField;
+
+public class login extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField txtEscribaSuId;
+	private JPasswordField passwordField;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					login frame = new login();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public login() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255, 255, 255));
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblIdTrabajador = new JLabel("ID Trabajador");
+		lblIdTrabajador.setHorizontalAlignment(SwingConstants.CENTER);
+		lblIdTrabajador.setBounds(82, 88, 100, 14);
+		contentPane.add(lblIdTrabajador);
+		
+		JLabel lblClave = new JLabel("Clave");
+		lblClave.setHorizontalAlignment(SwingConstants.CENTER);
+		lblClave.setBounds(95, 116, 75, 14);
+		contentPane.add(lblClave);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(255, 127, 80));
+		panel.setBounds(0, 0, 434, 74);
+		contentPane.add(panel);
+		panel.setLayout(null);
+		
+		JLabel lblTuberProductions = new JLabel("TB Systems");
+		lblTuberProductions.setForeground(new Color(255, 255, 255));
+		lblTuberProductions.setBounds(131, 11, 170, 53);
+		panel.add(lblTuberProductions);
+		lblTuberProductions.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTuberProductions.setFont(new Font("Segoe UI", Font.PLAIN, 30));
+		
+		JSeparator separator = new JSeparator();
+		separator.setBackground(new Color(0, 0, 0));
+		separator.setBounds(197, 105, 100, 2);
+		contentPane.add(separator);
+		
+		txtEscribaSuId = new JTextField();
+		txtEscribaSuId.setBorder(null);
+		txtEscribaSuId.setForeground(new Color(192, 192, 192));
+		txtEscribaSuId.setText("Escriba su ID");
+		txtEscribaSuId.setBounds(197, 85, 130, 20);
+		contentPane.add(txtEscribaSuId);
+		txtEscribaSuId.setColumns(10);
+		
+		passwordField = new JPasswordField();
+		passwordField.setBorder(null);
+		passwordField.setBounds(197, 112, 130, 23);
+		contentPane.add(passwordField);
+		
+		JButton btnNewButton = new JButton("Acceder");
+		btnNewButton.setBounds(172, 161, 89, 23);
+		contentPane.add(btnNewButton);
+	}
+}

@@ -1,0 +1,113 @@
+package proyecto;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.Color;
+import javax.swing.border.LineBorder;
+import javax.swing.JSeparator;
+import javax.swing.JPasswordField;
+
+public class login extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField txtEscribaSuId;
+	private JPasswordField pwdEscribaSuClave;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					login frame = new login();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public login() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255, 255, 255));
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(255, 127, 80));
+		panel.setBounds(0, 0, 434, 74);
+		contentPane.add(panel);
+		panel.setLayout(null);
+		
+		JLabel lblTuberProductions = new JLabel("TB Systems");
+		lblTuberProductions.setForeground(new Color(255, 255, 255));
+		lblTuberProductions.setBounds(131, 11, 170, 53);
+		panel.add(lblTuberProductions);
+		lblTuberProductions.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTuberProductions.setFont(new Font("Segoe UI", Font.PLAIN, 30));
+		
+		JLabel lblIdTrabajador = new JLabel("ID Trabajador");
+		lblIdTrabajador.setFont(new Font("SansSerif", Font.PLAIN, 12));
+		lblIdTrabajador.setHorizontalAlignment(SwingConstants.CENTER);
+		lblIdTrabajador.setBounds(82, 98, 100, 14);
+		contentPane.add(lblIdTrabajador);
+		
+		JLabel lblClave = new JLabel("Clave");
+		lblClave.setFont(new Font("SansSerif", Font.PLAIN, 12));
+		lblClave.setHorizontalAlignment(SwingConstants.CENTER);
+		lblClave.setBounds(95, 123, 75, 14);
+		contentPane.add(lblClave);
+		
+		JSeparator separator = new JSeparator();
+		separator.setBackground(new Color(128, 128, 128));
+		separator.setBounds(197, 112, 130, 2);
+		contentPane.add(separator);
+		
+		JSeparator separator_1 = new JSeparator();
+		separator_1.setBackground(new Color(128, 128, 128));
+		separator_1.setBounds(197, 142, 130, 2);
+		contentPane.add(separator_1);
+		
+		txtEscribaSuId = new JTextField();
+		txtEscribaSuId.setBorder(null);
+		txtEscribaSuId.setForeground(new Color(192, 192, 192));
+		txtEscribaSuId.setText("Escriba su ID");
+		txtEscribaSuId.setBounds(197, 92, 130, 20);
+		contentPane.add(txtEscribaSuId);
+		txtEscribaSuId.setColumns(10);
+		
+		pwdEscribaSuClave = new JPasswordField();
+		pwdEscribaSuClave.setText("Clave");
+		pwdEscribaSuClave.setBorder(null);
+		pwdEscribaSuClave.setBounds(197, 119, 130, 23);
+		contentPane.add(pwdEscribaSuClave);
+		
+		JButton btnNewButton = new JButton("Acceder");
+		btnNewButton.setFont(new Font("SansSerif", Font.PLAIN, 11));
+		btnNewButton.setBounds(172, 168, 89, 23);
+		contentPane.add(btnNewButton);
+		
+		JLabel lblNewLabel = new JLabel("\u00A9 Todos los derechos reservados");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 9));
+		lblNewLabel.setBounds(129, 236, 174, 14);
+		contentPane.add(lblNewLabel);
+	}
+}
